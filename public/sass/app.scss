@@ -57,11 +57,20 @@ body{
 
 .top-bar{
 	margin-bottom: 0;
-	background-color: #09080d;
+	background-color: #282828;
 }
 
 .top-bar .name h1 a{
-	font-weight: 400;
+	font-weight: 100;
+	font-size: 1.2em;
 	// font-family: 'Old Standard TT', 'Georgia', serif;
 
+}
+
+.top-bar-section li a:not(.button){
+	background-color: #282828;
+}
+
+.top-bar-section ul li > a {
+	color: #C5C5C5;
 }
