@@ -6684,3 +6684,14 @@ a.th {
 .f-dropdown.large {
   max-width: 800px;
 }
+
+/* line 50, ../sass/app.scss */
+html, body {
+  background: transparent url("../images/skewed_print.png") repeat 0 0;
+}
+
+/* line 54, ../sass/app.scss */
+.top-bar {
+  background-color: #09080d;
+  margin-bottom: 0;
+}
