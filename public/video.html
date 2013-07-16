@@ -42,7 +42,8 @@
   </nav>
 
   <!-- featured video -->
-  <div class="featured-video flex-video widescreen vimeo">
+  <!-- <div class="featured-video flex-video widescreen vimeo"> -->
+  <div class="fullscreen-video">
     <iframe src="http://player.vimeo.com/video/10839224?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   </div>
 
@@ -51,7 +52,6 @@
     <div class="large-12 columns">
       <h2>Welcome to Foundation</h2>
       <p>This is version 4.2.3.</p>
-      <hr />
     </div>
   </div>
 
@@ -78,8 +78,13 @@
   <script src="javascripts/foundation/foundation.section.js"></script>
   <script src="javascripts/foundation/foundation.tooltips.js"></script>
   <script src="javascripts/foundation/foundation.topbar.js"></script>
+  <script src="javascripts/app.js"></script>
   <script>
     $(document).foundation();
+    $(function(){
+      console.log(YCU);
+      YCU.init();
+    });
   </script>
 </body>
 
