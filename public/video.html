@@ -59,50 +59,44 @@
   <script>
     var YCU = YCU || {};
     YCU.useZepto = '__proto__' in {};
-    YCU.domLibCdn = (YCU.useZepto) ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.js' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-    
-    Modernizr.load([
-      {
-        load: YCU.domLibCdn,
-        complete: function () {
-          if ( YCU.useZepto && !window.Zepto ) {
-            Modernizr.load('javascripts/vendor/zepto.js');
-          } else if (!YCU.useZepto && !window.jQuery) {
-            Modernizr.load('javascripts/vendor/jquery.js');
-          }
-        }
-      },
-      {
-        // This will wait for the fallback to load and
-        // execute if it needs to.
-        load: [
-          'javascripts/foundation/foundation.js',
-          'javascripts/foundation/foundation.alerts.js',
-          'javascripts/foundation/foundation.clearing.js',
-          'javascripts/foundation/foundation.cookie.js',
-          'javascripts/foundation/foundation.dropdown.js',
-          'javascripts/foundation/foundation.forms.js',
-          'javascripts/foundation/foundation.interchange.js',
-          'javascripts/foundation/foundation.joyride.js',
-          'javascripts/foundation/foundation.magellan.js',
-          'javascripts/foundation/foundation.orbit.js',
-          'javascripts/foundation/foundation.placeholder.js',
-          'javascripts/foundation/foundation.reveal.js',
-          'javascripts/foundation/foundation.section.js',
-          'javascripts/foundation/foundation.tooltips.js',
-          'javascripts/foundation/foundation.topbar.js',
-          'javascripts/app.js'
-        ], 
-        complete: function(){
-          $(document).foundation();
-          $(function(){
-            YCU.init();
-          });
-        }
-      }
-    ]);
+
+    // load cdn version of zepto or jquery
+    document.write('<script src=' +
+      (YCU.useZepto ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.js' :
+        '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') +
+      '><\/script>')
   </script>
 
-</body>
+  <script type="text/javascript">
+    // load fallback if cdn verion isn't found
+    if (YCU.useZepto && !window.Zepto) {
+      document.write('<script src="javascripts/vendor/zepto.js"><\/script>')
+    } else if (!YCU.useZepto && !window.jQuery){
+      document.write('<script src="javascripts/vendor/jquery.js"><\/script>')
+    }
+  </script>
 
+  <script src="javascripts/foundation/foundation.js"></script>
+  <script src="javascripts/foundation/foundation.alerts.js"></script>
+  <script src="javascripts/foundation/foundation.clearing.js"></script>
+  <script src="javascripts/foundation/foundation.cookie.js"></script>
+  <script src="javascripts/foundation/foundation.dropdown.js"></script>
+  <script src="javascripts/foundation/foundation.forms.js"></script>
+  <script src="javascripts/foundation/foundation.interchange.js"></script>
+  <script src="javascripts/foundation/foundation.joyride.js"></script>
+  <script src="javascripts/foundation/foundation.magellan.js"></script>
+  <script src="javascripts/foundation/foundation.orbit.js"></script>
+  <script src="javascripts/foundation/foundation.placeholder.js"></script>
+  <script src="javascripts/foundation/foundation.reveal.js"></script>
+  <script src="javascripts/foundation/foundation.section.js"></script>
+  <script src="javascripts/foundation/foundation.tooltips.js"></script>
+  <script src="javascripts/foundation/foundation.topbar.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script>
+    $(document).foundation();
+    $(function(){
+      YCU.VideoPage.init();
+    });
+  </script>
+</body>
 </html>

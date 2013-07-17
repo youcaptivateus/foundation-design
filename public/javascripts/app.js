@@ -1,6 +1,8 @@
 var YCU = YCU || {};
+YCU.VideoPage = {};
 (function($, NS){
-	$.extend(true, YCU, {
+
+	$.extend(true, NS, {
 
 		init: function(){
 			var that = this;
@@ -41,10 +43,7 @@ var YCU = YCU || {};
 				css.height = this.viewportWidth * 0.5625;
 			}
 
-			console.log(css);
-
 			this.$video.css(css);
-
 		}
 	});
-})($, YCU);
+})($, YCU.VideoPage);
