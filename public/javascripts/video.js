@@ -14,17 +14,20 @@ YCU.VideoPage = {};
 			this.viewportHeight = this.$w.height();
 
 
-			this.onResize();
+			// init actions
+			this.sizeVideo();
+
 			this.$w.on('resize', $.proxy(that.onResize, this));
 		},
 
 		onResize: function(){
+			this.navHeight = this.$nav.height();
+			this.viewportWidth = this.$w.width();
+			this.viewportHeight = this.$w.height();
 			this.sizeVideo();
 		},
 
 		sizeVideo: function(){
-			console.log('resize');
-
 			var useableHeight = this.viewportHeight - this.navHeight;
 			var css = {};
 
@@ -35,7 +38,6 @@ YCU.VideoPage = {};
 				css.height = useableHeight;
 			} else {
 
-				console.log('window too tall');
 				// window plenty tall
 				css.width = '100%';
 				css.height = this.viewportWidth * 0.5625;
