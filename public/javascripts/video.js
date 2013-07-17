@@ -1,9 +1,7 @@
 var YCU = YCU || {};
 YCU.VideoPage = {};
 (function($, NS){
-
 	$.extend(true, NS, {
-
 		init: function(){
 			var that = this;
 

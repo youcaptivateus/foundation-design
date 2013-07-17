@@ -60,18 +60,15 @@
     var YCU = YCU || {};
     YCU.useZepto = '__proto__' in {};
 
-    // load cdn version of zepto or jquery
+    // load zepto or cdn version of jquery
     document.write('<script src=' +
-      (YCU.useZepto ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.js' :
+      (YCU.useZepto ? 'javascripts/vendor/zepto.js' :
         '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') +
       '><\/script>')
   </script>
   <script type="text/javascript">
-
-    // load fallback if cdn verion isn't found
-    if (YCU.useZepto && !window.Zepto) {
-      document.write('<script src="javascripts/vendor/zepto.js"><\/script>')
-    } else if (!YCU.useZepto && !window.jQuery){
+    // load jquery fallback if cdn verion isn't found
+    if (!YCU.useZepto && !window.jQuery) {
       document.write('<script src="javascripts/vendor/jquery.js"><\/script>')
     }
   </script>
