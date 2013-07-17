@@ -57,12 +57,67 @@
 
   
   <script>
-    document.write('<script src=' +
-      ('__proto__' in {} ? 'javascripts/vendor/zepto' :
-        'javascripts/vendor/jquery') +
-      '.js><\/script>')
-  </script>
+    var YCU = YCU || {};
+    YCU.useZepto = '__proto__' in {};
+    YCU.domLibCdn = (YCU.useZepto) ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.js' : '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+    
+    Modernizr.load([
+      {
+        load: YCU.domLibCdn,
+        complete: function () {
+          console.log('zepto loaded', YCU.useZepto, !window.Zepto);
 
+          if ( YCU.useZepto && !window.Zepto ) {
+            Modernizr.load('javascripts/vendor/zepto.js');
+          } else if (!YCU.useZepto && !window.jQuery) {
+            Modernizr.load('javascripts/vendor/jquery.js');
+          }
+        }
+      },
+      {
+        // This will wait for the fallback to load and
+        // execute if it needs to.
+        load: [
+          'javascripts/foundation/foundation.js',
+          'javascripts/foundation/foundation.alerts.js',
+          'javascripts/foundation/foundation.clearing.js',
+          'javascripts/foundation/foundation.cookie.js',
+          'javascripts/foundation/foundation.dropdown.js',
+          'javascripts/foundation/foundation.forms.js',
+          'javascripts/foundation/foundation.interchange.js',
+          'javascripts/foundation/foundation.joyride.js',
+          'javascripts/foundation/foundation.magellan.js',
+          'javascripts/foundation/foundation.orbit.js',
+          'javascripts/foundation/foundation.placeholder.js',
+          'javascripts/foundation/foundation.reveal.js',
+          'javascripts/foundation/foundation.section.js',
+          'javascripts/foundation/foundation.tooltips.js',
+          'javascripts/foundation/foundation.topbar.js',
+          'javascripts/app.js'
+        ], 
+        complete: function(){
+          console.log('done');
+          $(document).foundation();
+          $(function(){
+            console.log(YCU);
+            YCU.init();
+          });
+        }
+      }
+    ]);
+
+    // cdn version of zepto or jquery
+    // document.write('<script src=' +
+    //   (YCU.useZepto ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.js' :
+    //     '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') +
+    //   '><\/script>')
+
+    // load fallback if cdn isn't found
+    // if ($) {
+    //   console.log('dom lib loaded');
+    // }
+  </script>
+  <!--
   <script src="javascripts/foundation/foundation.js"></script>
   <script src="javascripts/foundation/foundation.alerts.js"></script>
   <script src="javascripts/foundation/foundation.clearing.js"></script>
@@ -79,13 +134,7 @@
   <script src="javascripts/foundation/foundation.tooltips.js"></script>
   <script src="javascripts/foundation/foundation.topbar.js"></script>
   <script src="javascripts/app.js"></script>
-  <script>
-    $(document).foundation();
-    $(function(){
-      console.log(YCU);
-      YCU.init();
-    });
-  </script>
+  -->
 </body>
 
 </html>
