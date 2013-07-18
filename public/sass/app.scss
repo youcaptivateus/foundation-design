@@ -55,7 +55,7 @@ body{
 
 .top-bar{
 	margin-bottom: 0;
-	background-color: #282828;
+	background: #282828 url('../images/skewed_print.png') repeat 0 0;
 }
 
 // name plate
@@ -90,12 +90,51 @@ body{
 
 
 
+.ycu-content h2{
+}
+
+	.media-readin{
+		font-family: Georgia, serif;
+		// font-weight: 400;
+		font-size: 1.2em;
+	}
+
+	.media-credit{
+		// font-weight: 400;
+		font-size: 0.9em;
+	}
+
+
+	.city, .city-link{
+		display: inline-block;
+	}
+
+		.city-link{
+			// text-transform: uppercase;
+			font-size: 0.8em;
+			line-height: 0.9em;
+			margin-left: 0.7em;
+			padding-left: 0.7em;
+			border-left: 1px solid #ccc;
+		}
+
+
 
 ul.social li{
 	display: inline-block;
 	list-style-type: none;
 	margin: 0 3px 0 0;
 	padding: 0;
+}
+
+li.add-video span{
+	display: block;
+	font-size: 32px;
+	line-height: 110px;
+	background-color: #ccc;
+	text-align: center;
+
+	cursor: pointer;
 }
 
 .webicon {
@@ -106,3 +145,26 @@ ul.social li{
 .webicon:hover, .webicon:active {
 	-webkit-filter: grayscale(0);
 }
+
+
+
+
+/**
+* Footer
+*/
+
+.ycu-footer{
+	text-align: center;
+}
+
+	.colophon{
+		// font-family: 'Old Standard TT', 'Georgia', serif;
+		font-weight: 400;
+		font-size: 1.2em;
+	}
+
+	.copyright{
+		padding: 1.3em 0;
+		border-top: 1px solid #6D6D6D;
+		font-size: 0.7em;
+	}

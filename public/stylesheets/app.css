@@ -5077,7 +5077,7 @@ form.custom .custom.disabled {
 /* line 56, ../sass/app.scss */
 .top-bar {
   margin-bottom: 0;
-  background-color: #282828;
+  background: #282828 url("../images/skewed_print.png") repeat 0 0;
 }
 
 /* line 62, ../sass/app.scss */
@@ -5113,7 +5113,32 @@ form.custom .custom.disabled {
   height: 100%;
 }
 
-/* line 94, ../sass/app.scss */
+/* line 96, ../sass/app.scss */
+.media-readin {
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+}
+
+/* line 102, ../sass/app.scss */
+.media-credit {
+  font-size: 0.9em;
+}
+
+/* line 108, ../sass/app.scss */
+.city, .city-link {
+  display: inline-block;
+}
+
+/* line 112, ../sass/app.scss */
+.city-link {
+  font-size: 0.8em;
+  line-height: 0.9em;
+  margin-left: 0.7em;
+  padding-left: 0.7em;
+  border-left: 1px solid #ccc;
+}
+
+/* line 123, ../sass/app.scss */
 ul.social li {
   display: inline-block;
   list-style-type: none;
@@ -5121,14 +5146,45 @@ ul.social li {
   padding: 0;
 }
 
-/* line 101, ../sass/app.scss */
+/* line 130, ../sass/app.scss */
+li.add-video span {
+  display: block;
+  font-size: 32px;
+  line-height: 110px;
+  background-color: #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 140, ../sass/app.scss */
 .webicon {
   -webkit-filter: grayscale(1);
   -webkit-transition: -webkit-filter 0.3s ease-in;
   /* chrome & safari */
 }
 
-/* line 106, ../sass/app.scss */
+/* line 145, ../sass/app.scss */
 .webicon:hover, .webicon:active {
   -webkit-filter: grayscale(0);
+}
+
+/**
+* Footer
+*/
+/* line 156, ../sass/app.scss */
+.ycu-footer {
+  text-align: center;
+}
+
+/* line 160, ../sass/app.scss */
+.colophon {
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+/* line 166, ../sass/app.scss */
+.copyright {
+  padding: 1.3em 0;
+  border-top: 1px solid #6D6D6D;
+  font-size: 0.7em;
 }

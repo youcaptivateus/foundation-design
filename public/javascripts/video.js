@@ -1,3 +1,6 @@
+/**
+* Video page specific functionality
+*/
 var YCU = YCU || {};
 YCU.VideoPage = {};
 (function($, NS){
