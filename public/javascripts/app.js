@@ -27,6 +27,9 @@ YCU.Main = {};
 			this.$w = $(window);
 			this.$nav = $('nav.top-bar');
 
+
+			this.$videoLinks = $('ul.video-links');
+
 			// updated measurements
 			this.navHeight = this.$nav.height();
 			this.viewportWidth = this.$w.width();
@@ -56,7 +59,13 @@ YCU.Main = {};
 		},
 
 		sizeVideoLinks: function(){
-			console.log('size video links');
+			var $ul = this.$videoLinks;
+			var $thumb = $ul.find('li').not('.add-video').first().find('img');
+
+			// size the "+" links by setting their line-hight to that
+			// of the photos of the other LI elements
+			$vLink = $ul.find('li.add-video span');
+			$vLink.css('lineHeight',$thumb.height()+'px');
 		}
 	});
 
