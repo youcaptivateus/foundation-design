@@ -12,12 +12,12 @@ YCU.VideoPage = {};
 			this.$video = $('.fullscreen-video');
 
 			// resize events
-			YCU.Main.$w.on('resize', $.proxy(that.onResize, this));
-
+			YCU.Main.resizeCallbacks.add(function(){
+				$.proxy(that.onResize(), that);
+			});
 
 			// init actions
 			this.sizeVideo();
-
 		},
 
 		onResize: function(){
@@ -41,5 +41,10 @@ YCU.VideoPage = {};
 
 			this.$video.css(css);
 		}
+	});
+
+
+	$(function(){
+		NS.init();
 	});
 })($, YCU.VideoPage);
